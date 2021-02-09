@@ -9,6 +9,15 @@ pipeline {
     WORKER = "Micro"
   }
   stages {
+     stage('Checkout..') {
+    steps {
+                checkout([
+                    $class: 'GitSCM', 
+                    branches: [[name: '*/master']], 
+                    userRemoteConfigs: [[url: 'https://github.com/API931/MyRepo/demoproject.git']]
+                ])
+            }
+     }
     stage('Build') {
       steps {
             bat 'mvn -B -U -e -V tree/master/demoproject/pom.xml clean -DskipTests package'   
