@@ -14,7 +14,7 @@ pipeline {
                 checkout([
                     $class: 'GitSCM', 
                     branches: [[name: '*/master']], 
-                    userRemoteConfigs: [[url: 'https://github.com/API931/MyRepo/demoproject.git']]
+                    userRemoteConfigs: [[url: 'https://github.com/API931/MyRepo/tree/master/demoproject.git']]
                 ])
             }
      }
